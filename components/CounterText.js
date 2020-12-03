@@ -14,7 +14,11 @@ export default function CounterText(props) {
     <Text
       style={[
         styles.counterText,
-        { color: props.color, fontSize: props.fontSize },
+        {
+          color: props.color,
+          fontSize: props.fontSize,
+          margineButton: props.marginButton,
+        },
       ]}
     >
       {props.children}
