@@ -13,7 +13,7 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.text}>{count}</Text>
       <Button title="Press me" onPress={increment}></Button>
-      <Text>Keep going!</Text>
+      <Text>style={styles.encouragingText}>Keep going!</Text>
 
       <StatusBar style="auto" />
     </View>
@@ -26,5 +26,10 @@ const styles = StyleSheet.create({
     backgroundColor: "skyblue",
     alignItems: "center",
     justifyContent: "center",
+  },
+
+  encouragingText: {
+    marginTop: 50,
+    color: "#888",
   },
 });
