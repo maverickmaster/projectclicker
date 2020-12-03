@@ -26,7 +26,9 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <CounterText></CounterText>
+      <CounterText fontSize={60} color="blue">
+        {count}
+      </CounterText>
 
       <Text style={{ fontSize: 80, fontWeight: "bold" }}>{count}</Text>
 
