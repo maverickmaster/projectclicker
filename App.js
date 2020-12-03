@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, Text, View, Button, TouchableOpacity } from "react-native";
+import CounterText from "./components/CounterText";
 
 export default function App() {
   const [count, setCount] = useState(0);
@@ -10,6 +11,14 @@ export default function App() {
   }
 
   function renderEncouragingText() {
+    if (count >= 30) {
+      return "wah, hand pain or not?";
+    }
+
+    if (count >= 20) {
+      return "hang in there!";
+    }
+
     if (count >= 10) {
       return "Keep going!";
     }
@@ -17,8 +26,18 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <CounterText></CounterText>
+
       <Text style={{ fontSize: 80, fontWeight: "bold" }}>{count}</Text>
-      <Button title="Press me" onPress={increment}></Button>
+
+      {
+        // <Button title="Press me" onPress={increment}></Button>
+      }
+
+      <TouchableOpacity style={styles.button} onPress={increment}>
+        <Text style={styles.buttonText}>Press me!</Text>
+      </TouchableOpacity>
+
       <Text style={styles.encouragingText}>{renderEncouragingText()}</Text>
 
       <StatusBar style="auto" />
@@ -37,5 +56,19 @@ const styles = StyleSheet.create({
   encouragingText: {
     marginTop: 50,
     color: "#888",
+    fontSize: 30,
+  },
+
+  button: {
+    backgroundColor: "red",
+    padding: 20,
+    borderRadius: 20,
+    marginTop: 20,
+  },
+
+  buttonText: {
+    color: "white",
+    fontWeight: "bold",
+    fontSize: 30,
   },
 });
