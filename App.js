@@ -38,7 +38,7 @@ export default function App() {
         {count}
       </CounterText>
 
-      <CounterText fontSize={80} color="navy">
+      <CounterText fontSize={80} color="brown">
         {count}
       </CounterText>
 
